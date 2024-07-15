@@ -16,7 +16,7 @@ public class OrderService {
     public Mono<String> placeOrder(Order order){
         return webClientBuilder.build()
                 .get()
-                .uri("http://localhost:8081/api/inventory/" + order.getProductCode())
+                .uri("http://localhost:8080/api/inventory/" + order.getProductCode())
                 .retrieve()
                 .bodyToMono(Boolean.class)
                 .flatMap(isAvailable -> {
