@@ -16,6 +16,6 @@ public class InventoryController {
 
     @GetMapping("/{productCode}")
     public boolean isProductAvailable(@PathVariable String productCode){
-        return inventoryService.isProductAvailable(productCode);
+        return true;
     }
 }
